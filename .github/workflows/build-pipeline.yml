@@ -38,7 +38,7 @@ jobs:
       # Step 5 (Optional but Recommended): Upload the test reports
       - name: Upload Test Reports
         if: always() # This ensures reports are uploaded even if tests fail
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-reports
           path: app/build/reports/tests/test/
@@ -46,7 +46,7 @@ jobs:
       # Step 6 (Optional but Recommended): Upload the executable JAR file
       - name: Upload JAR Artifact
         if: success() # Only upload the JAR if the build succeeds
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: executable-jar
           path: app/build/libs/*.jar
